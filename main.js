@@ -20,7 +20,7 @@ function main() {
                 todo.viewTodo();
                 break;
             case '3':
-                console.log('\nPilihan update belum tersedia.');
+                todo.updateTodo();
                 break;
             case '4':
                 todo.deleteTodo();
