@@ -11,14 +11,26 @@ function addTodo() {
 }
 
 function viewTodo() {
-    console.log('Daftar Tugas:');
+    console.log('\nDaftar Tugas:');
     todoList.forEach((task, index) => {
         console.log(`${index + 1}. ${task}`);
     });
+}
+
+function deleteTodo() {
+    viewTodo();
+    const index = readline.question('\nHapus tugas nomor berapa? ') - 1;
+    if (index >= 0 && index < todoList.length) {
+        todoList.splice(index, 1);
+        saveTodoList();
+        console.log('Tugas dihapus.');
+    } else {
+        console.log('Nomor tugas tidak valid.');
+    }
 }
 
 function saveTodoList() {
     fs.writeFileSync('todoData.json', JSON.stringify(todoList));
 }
 
-module.exports = { addTodo, viewTodo };
+module.exports = { addTodo, viewTodo, deleteTodo };

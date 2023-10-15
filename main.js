@@ -23,7 +23,7 @@ function main() {
                 console.log('\nPilihan update belum tersedia.');
                 break;
             case '4':
-                console.log('\nPilihan hapus belum tersedia.');
+                todo.deleteTodo();
                 break;
             case '5':
                 process.exit(0);
